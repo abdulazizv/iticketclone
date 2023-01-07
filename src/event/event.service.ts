@@ -11,7 +11,6 @@ export class EventService {
     @InjectModel(Event) private eventRepository: typeof Event,
     private readonly fileService: FilesService) { }
   async create(createEventDto: CreateEventDto,photo:any) {
-    console.log("error shu yerda")
     const fileName = await this.fileService.createFile(photo);
     // console.log(createEventDto.description)
     const event = await this.eventRepository.create({

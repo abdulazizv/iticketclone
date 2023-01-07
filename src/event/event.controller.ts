@@ -14,7 +14,6 @@ export class EventController {
   @UseInterceptors(FileInterceptor('photo'))
   @Post()
   create(@Body() createEventDto: CreateEventDto,@UploadedFile() photo:any) {
-    console.log('12321')
     return this.eventService.create(createEventDto,photo);
   }
 
